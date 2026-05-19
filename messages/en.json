@@ -138,6 +138,24 @@
     "stages7": "7-Stage",
     "pumped": "With Pump",
     "pumpless": "Without Pump",
+    "scroll1Badge": "Filter Technology",
+    "scroll1TitleA": "Advanced Filter System",
+    "scroll1TitleB": "with 3+2 Year Warranty",
+    "scroll1Points": [
+      "NSF & FDA certified filter components",
+      "5, 6 or 7-stage purification options",
+      "High-capacity, long-life membrane",
+      "Enriched water with optional mineralization"
+    ],
+    "scroll2Badge": "Pump & Tank",
+    "scroll2TitleA": "Powerful Pump,",
+    "scroll2TitleB": "Reliable Pressure Tank",
+    "scroll2Points": [
+      "Available with or without pump",
+      "Silent, high-efficiency pump",
+      "Stainless interior, long-lasting tank",
+      "Consistent performance even at low pressure"
+    ],
     "ctaH2": "Let Us Bring Aday Su Premium to Your Home",
     "ctaSub": "Call us for a free inspection. Our expert will analyze your water quality and recommend the right model.",
     "ctaCall": "Call Now",

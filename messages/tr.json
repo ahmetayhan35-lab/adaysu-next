@@ -138,6 +138,24 @@
     "stages7": "7 Aşamalı",
     "pumped": "Pompalı",
     "pumpless": "Pompasız",
+    "scroll1Badge": "Filtre Teknolojisi",
+    "scroll1TitleA": "3+2 Yıl Garantili",
+    "scroll1TitleB": "Gelişmiş Filtre Sistemi",
+    "scroll1Points": [
+      "NSF & FDA onaylı filtre komponentleri",
+      "5, 6 veya 7 aşamalı arıtma kademesi",
+      "Yüksek kapasiteli, uzun ömürlü membran",
+      "Mineral ekleyici ile zenginleştirilmiş su"
+    ],
+    "scroll2Badge": "Pompa & Tank",
+    "scroll2TitleA": "Güçlü Pompa,",
+    "scroll2TitleB": "Güvenilir Basınç Tankı",
+    "scroll2Points": [
+      "Pompalı ve pompasız model seçeneği",
+      "Sessiz çalışan, yüksek verimli pompa",
+      "Paslanmaz iç yüzey, uzun ömürlü tank",
+      "Düşük su basıncında da kesintisiz performans"
+    ],
     "ctaH2": "Aday Su Premium'u Evinize Getirelim",
     "ctaSub": "Ücretsiz keşif için bizi arayın. Uzmanımız su kalitenizi analiz edip en uygun modeli önersin.",
     "ctaCall": "Hemen Ara",

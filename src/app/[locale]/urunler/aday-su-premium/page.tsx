@@ -20,10 +20,84 @@ const WA_ICON = (
   </svg>
 )
 
+function VideoSection({
+  src, badge, titleA, titleB, points, videoRight, dark,
+}: {
+  src: string; badge: string; titleA: string; titleB: string
+  points: string[]; videoRight: boolean; dark?: boolean
+}) {
+  const fg       = dark ? 'white' : 'var(--aday-deep)'
+  const fgMute   = dark ? 'rgba(255,255,255,0.72)' : 'var(--aday-mute)'
+  const badgeBg  = dark ? 'rgba(44,95,101,0.55)' : 'var(--aday-pale)'
+  const badgeClr = dark ? 'rgba(255,255,255,0.9)' : 'var(--aday-mineral)'
+  const badgeBdr = dark ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(44,95,101,0.2)'
+
+  const card = (
+    <div className="sv-card" style={{
+      flex: '0 0 42%', padding: '0 clamp(24px, 5vw, 64px)',
+      display: 'flex', flexDirection: 'column', justifyContent: 'center',
+    }}>
+      <span style={{
+        display: 'inline-flex', alignSelf: 'flex-start',
+        background: badgeBg, color: badgeClr, border: badgeBdr,
+        borderRadius: 4, fontSize: 11, fontWeight: 700,
+        padding: '4px 12px', fontFamily: 'var(--font-body)',
+        letterSpacing: '0.10em', textTransform: 'uppercase', marginBottom: 20,
+      }}>
+        {badge}
+      </span>
+      <h2 style={{
+        fontFamily: 'var(--font-heading)', fontSize: 'clamp(22px, 3vw, 38px)',
+        fontWeight: 700, lineHeight: 1.2, color: fg, marginBottom: 32,
+      }}>
+        {titleA}<br />{titleB}
+      </h2>
+      <ul style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        {points.map((p, i) => (
+          <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span style={{
+              width: 22, height: 22, borderRadius: '50%',
+              background: 'var(--aday-mineral)', flexShrink: 0,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 1,
+            }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" aria-hidden>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span style={{ fontSize: 15, lineHeight: 1.6, color: fgMute, fontFamily: 'var(--font-body)' }}>
+              {p}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+
+  const videoEl = (
+    <div className="sv-video" style={{ flex: '0 0 58%', overflow: 'hidden' }}>
+      <video
+        src={src} autoPlay muted loop playsInline
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
+    </div>
+  )
+
+  return (
+    <section style={{
+      background: dark ? 'var(--aday-deep)' : 'var(--aday-paper)',
+      height: '100vh', display: 'flex', overflow: 'hidden', alignItems: 'stretch',
+    }}>
+      {videoRight ? <>{card}{videoEl}</> : <>{videoEl}{card}</>}
+    </section>
+  )
+}
+
 export default function AdaySuPremiumPage() {
   useScrollReveal()
   const t = useTranslations('AdayPremium')
   const features = t.raw('features') as { title: string; desc: string }[]
+  const scroll1Points = t.raw('scroll1Points') as string[]
+  const scroll2Points = t.raw('scroll2Points') as string[]
 
   const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Merhaba, Aday Su Premium hakkında bilgi almak istiyorum')}`
   const stageLabels: Record<number, string> = {
@@ -98,6 +172,30 @@ export default function AdaySuPremiumPage() {
           </div>
         </div>
       </section>
+
+      {/* ── SCROLL VIDEO 1: Filtreler — video solda, kart sağda ── */}
+      <VideoSection
+        src="/videos/aday-premium-1.mp4.mp4"
+        badge={t('scroll1Badge')}
+        titleA={t('scroll1TitleA')}
+        titleB={t('scroll1TitleB')}
+        points={scroll1Points}
+        videoRight={false}
+        dark={false}
+      />
+
+      <div style={{ height: 12, background: 'var(--aday-line)' }} />
+
+      {/* ── SCROLL VIDEO 2: Pompa/Tank — kart solda, video sağda ── */}
+      <VideoSection
+        src="/videos/aday-premium-2.mp4.mp4"
+        badge={t('scroll2Badge')}
+        titleA={t('scroll2TitleA')}
+        titleB={t('scroll2TitleB')}
+        points={scroll2Points}
+        videoRight={true}
+        dark={true}
+      />
 
       {/* ── FEATURES ── */}
       <section className="section">
@@ -289,12 +387,18 @@ export default function AdaySuPremiumPage() {
       </section>
 
       <style>{`
+        /* Scroll video — mobile stack */
+        @media (max-width: 768px) {
+          .sv-sticky { flex-direction: column !important; }
+          .sv-video { flex: none !important; width: 100% !important; height: 48vw !important; order: -1; }
+          .sv-card  { flex: none !important; padding: 28px 20px !important; justify-content: flex-start !important; overflow-y: auto; max-height: calc(100vh - 48vw); }
+        }
+        /* Features / models grids */
         @media (max-width: 900px) {
-          .premium-models-grid { grid-template-columns: 1fr !important; max-width: 420px; margin-left: auto; margin-right: auto; }
+          .premium-models-grid   { grid-template-columns: 1fr !important; max-width: 420px; margin-left: auto; margin-right: auto; }
           .premium-features-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 640px) {
-          .premium-videos-grid { grid-template-columns: 1fr !important; }
           .premium-features-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
