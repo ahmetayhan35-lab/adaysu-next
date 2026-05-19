@@ -25,7 +25,7 @@ const CATEGORIES = [
 
 type Category = (typeof CATEGORIES)[number]
 
-const WA_NUMBER = '905555555555'
+const WA_NUMBER = '905554863624'
 
 function waUrl(name: string) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(

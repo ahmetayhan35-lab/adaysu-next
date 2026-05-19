@@ -175,7 +175,7 @@ export default function AdaySuPremiumPage() {
 
       {/* ── SCROLL VIDEO 1: Filtreler — video solda, kart sağda ── */}
       <VideoSection
-        src="/videos/aday-premium-1.mp4.mp4"
+        src="/videos/aday-premium-1.mp4"
         badge={t('scroll1Badge')}
         titleA={t('scroll1TitleA')}
         titleB={t('scroll1TitleB')}
@@ -188,7 +188,7 @@ export default function AdaySuPremiumPage() {
 
       {/* ── SCROLL VIDEO 2: Pompa/Tank — kart solda, video sağda ── */}
       <VideoSection
-        src="/videos/aday-premium-2.mp4.mp4"
+        src="/videos/aday-premium-2.mp4"
         badge={t('scroll2Badge')}
         titleA={t('scroll2TitleA')}
         titleB={t('scroll2TitleB')}
