@@ -4,7 +4,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 const INFO = [
   { iconD:'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0zM12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z', title:'Adres',           lines:['Fazıl Paşa Cd. No.4/A','Altındağ, İzmir'], href:null },
-  { iconD:'M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 013 1.18 2 2 0 015 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.91 7.91a16 16 0 006.29 6.29l1.28-1.29a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z', title:'Telefon',         lines:['0232 458 39 40','0555 486 36 24'], href:'tel:02324583940' },
+  { iconD:'M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 013 1.18 2 2 0 015 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.91 7.91a16 16 0 006.29 6.29l1.28-1.29a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z', title:'Telefon',         lines:['0232 458 39 40','0536 041 39 40'], href:'tel:02324583940' },
   { iconD:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z', title:'Çalışma Saatleri', lines:['Pzt–Cmt: 08:30 – 18:30','Pazar: Randevulu'], href:null },
   { iconD:'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6-10l6-3m0 13l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 9', title:'Hizmet Bölgesi',  lines:['İzmir geneli','Ücretsiz keşif imkânı'], href:null },
 ]
@@ -23,7 +23,7 @@ export default function ContactPage() {
     const msg = encodeURIComponent(
       `Merhaba, web sitesinden iletişim formu dolduran bir müşterinizim.\n\nAd Soyad: ${form.name}\nTelefon: ${form.phone}\nKonu: ${form.subject}\nMesaj: ${form.message}`
     )
-    window.open(`https://wa.me/905554863624?text=${msg}`, '_blank')
+    window.open(`https://wa.me/905360413940?text=${msg}`, '_blank')
     setSent(true)
   }
 
@@ -78,7 +78,7 @@ export default function ContactPage() {
               </div>
 
               {/* WhatsApp */}
-              <a href="https://wa.me/905554863624" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/905360413940" target="_blank" rel="noopener noreferrer"
                 className="reveal reveal-d4"
                 style={{ display:'flex',alignItems:'center',gap:12,marginTop:18, background:'#DCFCE7',border:'1px solid #86EFAC',borderRadius:'var(--radius)',padding:'15px 18px', color:'#15803D',fontWeight:700,fontSize:14,fontFamily:'var(--font-body)',transition:'background var(--ease)' }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#BBF7D0')}

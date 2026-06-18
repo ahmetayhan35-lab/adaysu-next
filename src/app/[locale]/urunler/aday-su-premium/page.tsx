@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
-const WA_NUMBER = '905554863624'
+const WA_NUMBER = '905360413940'
 
 const MODELS = [
   { code: '35 İNL 105 P/L', stage: 5, pumped: true },

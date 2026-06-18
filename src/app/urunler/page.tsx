@@ -25,7 +25,7 @@ const CATEGORIES = [
 
 type Category = (typeof CATEGORIES)[number]
 
-const WA_NUMBER = '905554863624'
+const WA_NUMBER = '905360413940'
 
 function waUrl(name: string) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
@@ -445,6 +445,48 @@ export default function ProductsPage() {
           {/* ── EVSEL ── */}
           {tab === 'evsel' && (
             <>
+              {/* Featured: Aday Su Premium */}
+              <Link href="/urunler/aday-su-premium" style={{
+                display: 'block', textDecoration: 'none',
+                background: 'linear-gradient(135deg, var(--aday-deep) 0%, #1a4a50 100%)',
+                borderRadius: 14, marginBottom: 44,
+                border: '1px solid rgba(44,95,101,0.35)',
+                overflow: 'hidden', position: 'relative',
+                boxShadow: '0 4px 24px rgba(15,42,46,0.18)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(15,42,46,0.26)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 24px rgba(15,42,46,0.18)' }}
+              >
+                <div style={{ height: 4, background: 'linear-gradient(90deg, #c9a84c, #e8cc80, #c9a84c)' }} />
+                <div style={{ padding: '28px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+                    <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(201,168,76,0.18)', border: '1px solid rgba(201,168,76,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#c9a84c" aria-hidden>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span style={{ display: 'inline-block', background: 'rgba(201,168,76,0.2)', color: '#e8cc80', borderRadius: 4, fontSize: 10, fontWeight: 700, padding: '3px 10px', fontFamily: 'var(--font-body)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6, border: '1px solid rgba(201,168,76,0.3)' }}>
+                        Premium Seri
+                      </span>
+                      <div style={{ fontSize: 22, fontWeight: 700, fontFamily: 'var(--font-heading)', color: 'white', lineHeight: 1.2 }}>
+                        Aday Su Premium
+                      </div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-body)', marginTop: 4 }}>
+                        Özel tasarım, üstün filtrasyon — detaylı bilgi için tıklayın
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.35)', borderRadius: 8, padding: '10px 20px', color: '#e8cc80', fontSize: 13, fontWeight: 700, fontFamily: 'var(--font-body)', flexShrink: 0 }}>
+                    İncele
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                      <path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+
               {/* Alt kategori sekmeleri */}
               <div style={{ marginBottom: 40, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {CATEGORIES.map(cat => (

@@ -18,7 +18,7 @@ export default function ContactPage() {
     const msg = encodeURIComponent(
       t('waFormMessage', { name: form.name, phone: form.phone, subject: form.subject, message: form.message })
     )
-    window.open(`https://wa.me/905554863624?text=${msg}`, '_blank')
+    window.open(`https://wa.me/905360413940?text=${msg}`, '_blank')
     setSent(true)
   }
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
 
   const INFO = [
     { label: t('addressLabel'), lines: [t('addressLine1'), t('addressLine2')], href: null },
-    { label: t('phoneLabel'), lines: ['0232 458 39 40', '0555 486 36 24'], href: 'tel:02324583940' },
+    { label: t('phoneLabel'), lines: ['0232 458 39 40', '0536 041 39 40'], href: 'tel:02324583940' },
     { label: t('hoursLabel'), lines: [t('hoursLine1'), t('hoursLine2')], href: null },
     { label: t('areaLabel'), lines: [t('areaLine1'), t('areaLine2')], href: null },
   ]
@@ -86,7 +86,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <a href="https://wa.me/905554863624" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/905360413940" target="_blank" rel="noopener noreferrer"
                 className="reveal reveal-d4"
                 style={{ display:'flex',alignItems:'center',gap:12,marginTop:18, background:'#DCFCE7',border:'1px solid #86EFAC',borderRadius:'var(--radius)',padding:'15px 18px', color:'#15803D',fontWeight:700,fontSize:14,fontFamily:'var(--font-body)',transition:'background var(--ease)' }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#BBF7D0')}
